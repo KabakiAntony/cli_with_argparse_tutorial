@@ -1,7 +1,7 @@
 import argparse
 
 def add_task(args, tasks):
-    task = " ".join(args.add[1:]) # Exclude the first element (command name)
+    task = args.task 
 
     task_id = len(tasks) + 1
 
@@ -19,10 +19,10 @@ def main():
     tasks = []
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("add", nargs="+")
+    parser.add_argument("task", nargs="+")
     args = parser.parse_args()
 
-    if args.add:
+    if args.task:
         add_task(args, tasks)
 
 
