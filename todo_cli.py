@@ -1,7 +1,7 @@
 import argparse
 
 def add_task(args, tasks):
-    task = args.task 
+    task =  args.task
 
     task_id = len(tasks) + 1
 
@@ -19,8 +19,10 @@ def main():
     tasks = []
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("task", nargs="+")
+    parser.add_argument("task")
     args = parser.parse_args()
+
+    print(args)
 
     if args.task:
         add_task(args, tasks)
